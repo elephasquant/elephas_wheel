@@ -363,7 +363,7 @@ class bdist_wheel(Command):
         self.run_command("install")
 
         # remove source code files
-        if not self.exclude_source_files:
+        if self.exclude_source_files:
             for root, dirs, files in os.walk(self.bdist_dir):
                 for file in files:
                     if file.endswith(".py"):
